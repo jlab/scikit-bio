@@ -651,7 +651,7 @@ def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sam
     ``reference_distmat`` (or ``sample_squared_distance_to_centroid``) must align. This function
     does not currently validate alignment.
 
-        Parameters
+    Parameters
     ----------
     ordination : OrdinationResults
         Existing PCoA result, usually returned by ``pcoa``. Calculated from the reference
