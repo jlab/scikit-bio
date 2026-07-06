@@ -326,7 +326,7 @@ def pcoa(
                 )
         # if we got here, we could not use skbb
         # Center distance matrix, a requirement for PCoA here
-        matrix_data = center_distance_matrix(distmat.copy(), inplace=inplace)
+        matrix_data = center_distance_matrix(distmat.data, inplace=inplace)
 
         eigvals, eigvecs = _fsvd(matrix_data, ndim, seed=seed)
     else:
