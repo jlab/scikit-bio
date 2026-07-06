@@ -646,10 +646,10 @@ def _fsvd(centered_distance_matrix, dimensions=10, seed=None):
 def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sample_squared_distance_to_centroid=None):
     r"""Project point(s) to a reference PCoA
 
-    More specifally it uses Gower's Projection formula [1] to add a point to an existing PCoA.
-    The benefit is that the reference PCoA stays stable. Indexes of ordination and reference_distmat
-    or ordination and sample_squared_distance_to_centroid has to align. We dont check alignment at the
-    moment.
+    More specifically, it uses Gower's projection formula [1] to add point(s) to an existing PCoA.
+    The benefit is that the reference PCoA stays stable. The indexes of ``ordination`` and
+    ``reference_distmat`` (or ``sample_squared_distance_to_centroid``) must align. This function
+    does not currently validate alignment.
 
         Parameters
     ----------
