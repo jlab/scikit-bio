@@ -702,9 +702,9 @@ def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sam
         # Get the diagonal of the double centered matrix
         B = np.asarray(B, dtype=float)
         sample_squared_distance_to_centroid = np.diag(B).astype(float)
-    elif not isinstance(sample_squared_distance_to_centroid, np.array):
-        raise ValueError(
-            "sample_squared_distance_to_centroid has to be np.array"
+    else:
+        sample_squared_distance_to_centroid = np.asarray(
+            sample_squared_distance_to_centroid, dtype=float
         )
     # Gower projection:
     #
