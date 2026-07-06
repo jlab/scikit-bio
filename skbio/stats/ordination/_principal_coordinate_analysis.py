@@ -696,8 +696,13 @@ def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sam
                 "`ordination.samples` alone is not enough for exact Gower "
                 "projection when the PCoA was truncated."
             )
-        # Double center the distance matrix/ first step of regular PCoaA
-        B = center_distance_matrix(reference_distmat.to_numpy(), inplace=False)
+        # Double center the distance matrix / first step of regular PCoA
+        ref = (
+            reference_distmat.data
+            if isinstance(reference_distmat, DistanceMatrix)
+            else reference_distmat.to_numpy()
+        )
+        B = center_distance_matrix(ref, inplace=False)
 
         # Get the diagonal of the double centered matrix
         B = np.asarray(B, dtype=float)
