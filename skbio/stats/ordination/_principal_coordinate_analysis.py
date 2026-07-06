@@ -692,7 +692,7 @@ def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sam
     if sample_squared_distance_to_centroid is None:
         if reference_distmat is None:
             raise ValueError(
-                "Need either `reference_distmat` or `b_diag`. "
+                "Need either `reference_distmat` or `sample_squared_distance_to_centroid`. "
                 "`ordination.samples` alone is not enough for exact Gower "
                 "projection when the PCoA was truncated."
             )
