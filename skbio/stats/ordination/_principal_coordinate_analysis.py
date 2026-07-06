@@ -666,7 +666,7 @@ def pcoa_project(ordination, distances_to_reference, reference_distmat=None, sam
         The order of distances must match the order of ``ordination.samples`` and
         ``sample_squared_distance_to_centroid``. No reordering is currently
         performed.
-    reference_distmat : pandas.DataFrame, optional
+    reference_distmat : pandas.DataFrame or DistanceMatrix, optional
         Original square distance matrix used to compute the reference PCoA. This is
         used to compute the diagonal of the centered inner-product matrix when
         ``sample_squared_distance_to_centroid`` is not provided.
